@@ -22,12 +22,10 @@ public class ProfileService {
         return Profile.findById(id);
     }
 
-    // tag::adocPersistProfile[]
     public Profile persistProfile(@Valid Profile profile) {
         Profile.persist(profile);
         return profile;
     }
-    // end::adocPersistProfile[]
 
     public Profile updateProfile(@Valid Profile profile) {
         Profile entity = Profile.findById(profile.id);
@@ -36,6 +34,9 @@ public class ProfileService {
         entity.nickName = profile.nickName;
         entity.email = profile.email;
         entity.level = profile.level;
+        entity.currentExp = profile.currentExp;
+        entity.nextLevelExp = profile.nextLevelExp;
+        entity.money = profile.money;
         entity.gems = profile.gems;
         return entity;
     }

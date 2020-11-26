@@ -14,7 +14,6 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 
 @Schema(description = "The profile user")
-// tag::adocEntity[]
 @Entity
 public class Profile extends PanacheEntity {
 
@@ -29,6 +28,10 @@ public class Profile extends PanacheEntity {
     public String email;
 
     public int level;
+    public int currentExp;
+    public int nextLevelExp;
+    public double money;
+
 
     public long gems;
 
@@ -46,4 +49,3 @@ public class Profile extends PanacheEntity {
                 '}';
     }
 }
-// end::adocEntity[]
